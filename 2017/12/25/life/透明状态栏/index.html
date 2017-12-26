@@ -6,15 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.besthope.top">
-  <title>透明状态栏，图文详解 | Hope</title>
+  <title>透明状态栏、沉浸式模式实现方案 | Hope</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. 透明状态栏前端时间公司的app有个需求，需要加上断网提示，由于没有位置显示提示信息，所以打算将界面拓展到状态栏的部分，显示断网状态，类似于Android桌面的这种效果。 注意：本文的内容默认api为19以上，19以下的就不考虑了，毕竟现在也没有几个用4.4以下手机的了。 方案1 通过在主题中进行配置的方式将状态栏颜色设置为透明1234&amp;lt;item name=&amp;quot;android:s">
+  <meta name="description" content="主要讲解透明状态栏实现方案，setSystemVisibility()方法实现沉浸式模式，以及相关FLAG的含义">
 <meta name="keywords" content="透明状态栏">
 <meta property="og:type" content="article">
-<meta property="og:title" content="透明状态栏，图文详解">
+<meta property="og:title" content="透明状态栏、沉浸式模式实现方案">
 <meta property="og:url" content="http://www.besthope.top/2017/12/25/life/透明状态栏/index.html">
 <meta property="og:site_name" content="Hope">
-<meta property="og:description" content="1. 透明状态栏前端时间公司的app有个需求，需要加上断网提示，由于没有位置显示提示信息，所以打算将界面拓展到状态栏的部分，显示断网状态，类似于Android桌面的这种效果。 注意：本文的内容默认api为19以上，19以下的就不考虑了，毕竟现在也没有几个用4.4以下手机的了。 方案1 通过在主题中进行配置的方式将状态栏颜色设置为透明1234&amp;lt;item name=&amp;quot;android:s">
+<meta property="og:description" content="主要讲解透明状态栏实现方案，setSystemVisibility()方法实现沉浸式模式，以及相关FLAG的含义">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://wx3.sinaimg.cn/large/006fVPCvly1fmsz8qk3hnj30lc0zkjtt.jpg">
 <meta property="og:image" content="http://wx3.sinaimg.cn/large/006fVPCvly1fmt2kpdhjyj30ct0o3n0m.jpg">
@@ -29,10 +29,10 @@
 <meta property="og:image" content="http://wx4.sinaimg.cn/large/006fVPCvly1fmtyatj3hzj30ct0o342x.jpg">
 <meta property="og:image" content="http://wx2.sinaimg.cn/large/006fVPCvly1fmtzenuzxdj30ct0o3wkr.jpg">
 <meta property="og:image" content="http://wx3.sinaimg.cn/large/006fVPCvly1fmtzgzsmrjj30ct0o3n3r.jpg">
-<meta property="og:updated_time" content="2017-12-26T03:00:21.299Z">
+<meta property="og:updated_time" content="2017-12-26T03:18:39.123Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="透明状态栏，图文详解">
-<meta name="twitter:description" content="1. 透明状态栏前端时间公司的app有个需求，需要加上断网提示，由于没有位置显示提示信息，所以打算将界面拓展到状态栏的部分，显示断网状态，类似于Android桌面的这种效果。 注意：本文的内容默认api为19以上，19以下的就不考虑了，毕竟现在也没有几个用4.4以下手机的了。 方案1 通过在主题中进行配置的方式将状态栏颜色设置为透明1234&amp;lt;item name=&amp;quot;android:s">
+<meta name="twitter:title" content="透明状态栏、沉浸式模式实现方案">
+<meta name="twitter:description" content="主要讲解透明状态栏实现方案，setSystemVisibility()方法实现沉浸式模式，以及相关FLAG的含义">
 <meta name="twitter:image" content="http://wx3.sinaimg.cn/large/006fVPCvly1fmsz8qk3hnj30lc0zkjtt.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Hope" type="application/atom+xml">
@@ -164,7 +164,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      透明状态栏，图文详解
+      透明状态栏、沉浸式模式实现方案
     </h1>
   
 
@@ -177,7 +177,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-透明状态栏"><a href="#1-透明状态栏" class="headerlink" title="1. 透明状态栏"></a>1. 透明状态栏</h1><p>前端时间公司的app有个需求，需要加上断网提示，由于没有位置显示提示信息，所以打算将界面拓展到状态栏的部分，显示断网状态，类似于Android桌面的这种效果。<br><img src="http://wx3.sinaimg.cn/large/006fVPCvly1fmsz8qk3hnj30lc0zkjtt.jpg" width="150" height="250"></p>
+        <p>主要讲解透明状态栏实现方案，setSystemVisibility()方法实现沉浸式模式，以及相关FLAG的含义<br><a id="more"></a></p>
+<h1 id="1-透明状态栏"><a href="#1-透明状态栏" class="headerlink" title="1. 透明状态栏"></a>1. 透明状态栏</h1><p>前段时间公司的app有个需求，需要加上断网提示，由于没有位置显示提示信息，所以打算将界面拓展到状态栏的部分，显示断网状态，类似于Android桌面的这种效果。<br><img src="http://wx3.sinaimg.cn/large/006fVPCvly1fmsz8qk3hnj30lc0zkjtt.jpg" width="150" height="250"></p>
 <p><strong>注意：本文的内容默认api为19以上，19以下的就不考虑了，毕竟现在也没有几个用4.4以下手机的了。</strong></p>
 <h2 id="方案1-通过在主题中进行配置的方式将状态栏颜色设置为透明"><a href="#方案1-通过在主题中进行配置的方式将状态栏颜色设置为透明" class="headerlink" title="方案1 通过在主题中进行配置的方式将状态栏颜色设置为透明"></a>方案1 通过在主题中进行配置的方式将状态栏颜色设置为透明</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;item name=&quot;android:statusBarColor&quot;&gt;@android:color/transparent&lt;/item&gt;</span><br><span class="line">&lt;item name=&quot;android:navigationBarColor&quot;&gt;@android:color/transparent&lt;/item&gt;</span><br><span class="line">&lt;item name=&quot;android:windowTranslucentStatus&quot;&gt;false&lt;/item&gt;</span><br><span class="line">&lt;item name=&quot;android:windowTranslucentNavigation&quot;&gt;false&lt;/item&gt;</span><br></pre></td></tr></table></figure>
 <p>android:navigationBarColor   用于设置导航栏颜色<br>android:windowTranslucentStatus   默认为false,如果为true,状态栏会变为半透明，而且activity的内容会自动延伸到界面上，此时，对颜色的设置无效<br>android:windowTranslucentNavigation   默认为false,如果为true,下方导航栏会变为半透明，此时，对颜色的设置无效</p>
