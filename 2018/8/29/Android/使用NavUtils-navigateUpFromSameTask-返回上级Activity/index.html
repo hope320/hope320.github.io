@@ -72,7 +72,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Activity,Toolbar,NaviUtils," />
 
 
 
@@ -83,16 +83,18 @@
 
 
 
-<meta name="description" content="冲鸭~">
-<meta property="og:type" content="website">
-<meta property="og:title" content="窝棚の窝棚">
-<meta property="og:url" content="http://www.besthope.top/index.html">
+<meta name="description" content="昨天在学习Google的todoMVP的demo,看到代码里有一句NavUtils.navigateUpFromSameTask(this));不知道什么意思，然后去网上百度了一下，做下整理。 简介　　参考，主要用来正确的使Activiy返回到app结构层次中的逻辑父屏幕。 使用步骤 在AndroidManifest.xml文件中，指明逻辑上的父Activity 12345678&amp;lt;activ">
+<meta name="keywords" content="Activity,Toolbar,NaviUtils">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用NavUtils.navigateUpFromSameTask()返回上级Activity">
+<meta property="og:url" content="http://www.besthope.top/2018/8/29/Android/使用NavUtils-navigateUpFromSameTask-返回上级Activity/index.html">
 <meta property="og:site_name" content="窝棚の窝棚">
-<meta property="og:description" content="冲鸭~">
+<meta property="og:description" content="昨天在学习Google的todoMVP的demo,看到代码里有一句NavUtils.navigateUpFromSameTask(this));不知道什么意思，然后去网上百度了一下，做下整理。 简介　　参考，主要用来正确的使Activiy返回到app结构层次中的逻辑父屏幕。 使用步骤 在AndroidManifest.xml文件中，指明逻辑上的父Activity 12345678&amp;lt;activ">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-29T04:41:48.712Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="窝棚の窝棚">
-<meta name="twitter:description" content="冲鸭~">
+<meta name="twitter:title" content="使用NavUtils.navigateUpFromSameTask()返回上级Activity">
+<meta name="twitter:description" content="昨天在学习Google的todoMVP的demo,看到代码里有一句NavUtils.navigateUpFromSameTask(this));不知道什么意思，然后去网上百度了一下，做下整理。 简介　　参考，主要用来正确的使Activiy返回到app结构层次中的逻辑父屏幕。 使用步骤 在AndroidManifest.xml文件中，指明逻辑上的父Activity 12345678&amp;lt;activ">
 
 
 
@@ -122,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://www.besthope.top/"/>
+  <link rel="canonical" href="http://www.besthope.top/2018/8/29/Android/使用NavUtils-navigateUpFromSameTask-返回上级Activity/"/>
 
 
 
 
 
-  <title>窝棚の窝棚</title>
+  <title>使用NavUtils.navigateUpFromSameTask()返回上级Activity | 窝棚の窝棚</title>
   
 
 
@@ -157,8 +159,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -261,9 +262,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -293,9 +294,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/8/29/Android/使用NavUtils-navigateUpFromSameTask-返回上级Activity/" itemprop="url">使用NavUtils.navigateUpFromSameTask()返回上级Activity</a></h1>
+          <h1 class="post-title" itemprop="name headline">使用NavUtils.navigateUpFromSameTask()返回上级Activity</h1>
         
 
         <div class="post-meta">
@@ -378,21 +377,25 @@
       
 
       
-        
-          
-          昨天在学习Google的todoMVP的demo,看到代码里有一句NavUtils.navigateUpFromSameTask(this));不知道什么意思，然后去网上百度了一下，做下整理。
-简介　　参考，主要用来正确的使Activiy返回到app结构层次中的逻辑父屏幕。
-使用步骤
-在Androi
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/8/29/Android/使用NavUtils-navigateUpFromSameTask-返回上级Activity/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <p>昨天在学习Google的todoMVP的demo,看到代码里有一句NavUtils.navigateUpFromSameTask(this));不知道什么意思，然后去网上百度了一下，做下整理。</p>
+<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>　　<a href="http://developer.android.com/training/implementing-navigation/ancestral.html" target="_blank" rel="noopener">参考</a>，主要用来正确的使Activiy返回到app结构层次中的逻辑父屏幕。</p>
+<h3 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h3><ol>
+<li><p>在AndroidManifest.xml文件中，指明逻辑上的父Activity</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">activity</span> <span class="attr">android:name</span>=<span class="string">".activity.NaviSonActivity"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:theme</span>=<span class="string">"@style/NoActionBarStyle"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:parentActivityName</span>=<span class="string">".activity.NaviActivity"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 适配4.0以下 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta-data</span> <span class="attr">android:name</span>=<span class="string">"android.support.PARENT_ACTIVITY"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:value</span>=<span class="string">".activity.NaviActivity"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">activity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在子Activity中使用Toolbar，并实现点击事件</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(@Nullable Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">    setContentView(R.layout.activity_navi_son);</span><br><span class="line">    getSupportActionBar().setDisplayHomeAsUpEnabled(<span class="keyword">true</span>);    <span class="comment">// 启用ActionBar上的返回按（Up navigation）</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onOptionsItemSelected</span><span class="params">(MenuItem item)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">switch</span> (item.getItemId())&#123;</span><br><span class="line">        <span class="keyword">case</span> android.R.id.home:     <span class="comment">// ActionBar的上级导航对应的id 固定为 android.R.id.home</span></span><br><span class="line">            NavUtils.navigateUpFromSameTask(<span class="keyword">this</span>);  <span class="comment">// 结束当前Activity并返回到逻辑上的父Activity</span></span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">super</span>.onOptionsItemSelected(item);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改父Activity的启动模式。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">activity</span> <span class="attr">android:name</span>=<span class="string">".activity.NaviActivity"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:launchMode</span>=<span class="string">"singleTop"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>修改启动模式的原因在于，NavUtils.navigateUpFromSameTask(this);会结束当前Activity，但是会根据父Activity能否处理onNewIntent()选择创建父Activity或者将父Activity恢复到栈顶。一般情况下，我们都不希望父Activity被重新创建，所以要修改父Activity的启动模式。<br>修改前<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">08-29 12:36:04.958 15622-15622/com.hope.study D/NaviActivity: onCreate</span><br><span class="line">08-29 12:36:08.031 15622-15622/com.hope.study D/NaviActivity: onCreate</span><br></pre></td></tr></table></figure></p>
+<p>修改后<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">08-29 12:36:38.165 16680-16680/com.hope.study D/NaviActivity: onCreate</span><br><span class="line">08-29 12:36:41.176 16680-16680/com.hope.study D/NaviActivity: onNewIntent:0</span><br><span class="line">```  </span><br><span class="line">可以看到修改前的Activity被启动了两次，而修改后只是调用了onNewIntent()方法，并没有重新创建。</span><br><span class="line">### 其他</span><br><span class="line">当子Activity不是由父Activity打开，而是由外部App打开时，就会涉及到不同堆栈的操作问题，需要进行不同的处理。</span><br><span class="line">```java</span><br><span class="line">@Override</span><br><span class="line">public boolean onOptionsItemSelected(MenuItem item) &#123;</span><br><span class="line">    switch (item.getItemId()) &#123;</span><br><span class="line">    case android.R.id.home:</span><br><span class="line">        Intent upIntent = NavUtils.getParentActivityIntent(this);</span><br><span class="line">        if (NavUtils.shouldUpRecreateTask(this, upIntent)) &#123;        // 先判断是否需要重新创建Task，是返回true</span><br><span class="line">            TaskStackBuilder.create(this)               // 当前Activity不属于打开它的app，创建一个新的任务栈</span><br><span class="line">                    .addNextIntentWithParentStack(upIntent)     // 将当前Activity的逻辑向上的Activity添加到栈中</span><br><span class="line">                    .startActivities();</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            // 当前Activity属于打开它的app，直接跳转</span><br><span class="line">            NavUtils.navigateUpTo(this, upIntent);</span><br><span class="line">        &#125;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">    return super.onOptionsItemSelected(item);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这里先简单的记录下官方给出的处理方案，关于Activity的堆栈问题，之前在《Android开发艺术探索》中由看过，最近找个时间给它整理一下发过来。</p>
+<h3 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h3><p>从上面可以看出来，子Activity返回父Activity的逻辑，主要是通过NaviUtils.navigateUpTo()方法实现的，所以，当不想使用ActionBar时，直接在需要的地方调用该方法也可以。如：点击文字返回上级，也可以实现返回的效果。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">findViewById(R.id.btn).setOnClickListener(v-&gt;</span><br><span class="line">                startActivity(<span class="keyword">new</span> Intent(NaviActivity.<span class="keyword">this</span>,NaviSonActivity.class)));</span><br></pre></td></tr></table></figure></p>
+<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><p>如，通过点击通知进入某一个界面时，使用NaviUtil方式，而非finish()方式结束当前页面，使其跳转到app内界面，而不是直接退出app。</p>
+
       
     </div>
     
@@ -407,328 +410,40 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.besthope.top/2018/8/23/博客/使用hexo写博客/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="窝棚">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/photos/img/avatar/wopeng.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="窝棚の窝棚">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/8/23/博客/使用hexo写博客/" itemprop="url">使用hexo写博客</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-23T17:04:37+08:00">
-                2018-08-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/source/categories/博客/" itemprop="url" rel="index">
-                    <span itemprop="name">博客</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/Activity/" rel="tag"># Activity</a>
           
-
+            <a href="/tags/Toolbar/" rel="tag"># Toolbar</a>
           
-            
+            <a href="/tags/NaviUtils/" rel="tag"># NaviUtils</a>
           
-
-          
-          
-             <span id="/2018/8/23/博客/使用hexo写博客/" class="leancloud_visitors" data-flag-title="使用hexo写博客">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body han-init-context" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <p>　　距离上次搭建博客过去了8个月，现在想重新把博客捡起来，做一些日常的记录，总结。由于之前博客已经搭建完成了，所以这里只是单纯的做一些总结回顾，记录下搭建的大概的流程。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/8/23/博客/使用hexo写博客/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/8/23/博客/使用hexo写博客/" rel="next" title="使用hexo写博客">
+                <i class="fa fa-chevron-left"></i> 使用hexo写博客
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.besthope.top/2017/12/25/Android/透明状态栏/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="窝棚">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/photos/img/avatar/wopeng.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="窝棚の窝棚">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/25/Android/透明状态栏/" itemprop="url">透明状态栏、沉浸式模式实现方案</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-25T11:30:12+08:00">
-                2017-12-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/source/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/12/25/Android/透明状态栏/" class="leancloud_visitors" data-flag-title="透明状态栏、沉浸式模式实现方案">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body han-init-context" itemprop="articleBody">
-
-      
       
 
       
-        
-          <p>　　主要讲解透明状态栏实现方案，setSystemVisibility()方法实现沉浸式模式，以及相关FLAG的含义<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/12/25/Android/透明状态栏/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -738,10 +453,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -749,6 +465,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -769,8 +489,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -844,6 +573,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用步骤"><span class="nav-number">2.</span> <span class="nav-text">使用步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拓展"><span class="nav-number">3.</span> <span class="nav-text">拓展</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用场景"><span class="nav-number">4.</span> <span class="nav-text">应用场景</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -984,6 +729,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -1148,26 +897,6 @@
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
